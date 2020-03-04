@@ -7,5 +7,6 @@ int main() {
     cout << "Hello world" << endl;
     cout << "a = " << a << endl;
     cout << PI << endl;
+    cout << "通过Git Bash 修改" << endl;
     return 0;
 }
