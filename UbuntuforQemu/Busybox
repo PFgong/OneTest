@@ -21,7 +21,7 @@ Make file system by busybox in /home:
 	2) mkdir rootfs/lib
 	3) cp -r busybox-xxx/_install/* rootfs
 	4) cp -p /usr/arm-linux-gnueabi/bin/* rootfs/lib
-	5) mkdir -p rootfs/dev/
+	5) mkdir -p rootfs/dev/  &  cd rootfs/dev
 	6) mknod -m 666 tty1 c 4 1
 	7) mknod -m 666 tty2 c 4 2
 	6) mknod -m 666 tty3 c 4 3
