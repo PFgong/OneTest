@@ -1,9 +1,0 @@
-Vexpress : versatile express family - ARM company provided
-Vexpress is used to SOC design, test and verify, and adopts main-chip and sub-chip (main-chip provides outer API, sub-chip provides CPU computation)
-
-CPU provided by Vexpress
-	1) Cortex-A9 : sub-chip is Express A9x4(V2P-CA9x4)
-	2) Cortex-A5 : sub-chip is Express A5x2(V2P-CA5x2s)
-	3) Cortex-R5
-	4) Cortex-A15 : sub-chip is Express A15x2(V2P-CA15x2)
-
