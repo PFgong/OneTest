@@ -1,0 +1,30 @@
+Use busybox to make the file system
+
+Why? In linux, all is file, and user operate the system by file call. In addition, it is the interface of user and underlying starage.
+
+Root file system composes of shell commands, libs, char sets and setting script and stands for /
+
+What is busybox?  a set of linux commands and tools, a tool to make embeded file system.
+
+Use it :
+	1) download the resource code : https://www.busybox.net/downloads/
+	   remove to home/ : cp -r xxx /home;    tar xvf xxx
+	2) modify makefile : ARCH=arm      CROSS_COMPILE=arm-linux-gnueabi-
+	3) configure : make defconfig      make menuconfig
+	4) compile : make -j4   # using four processes to speed up the make rate
+	5) install : make install
+
+Error log : scripts/kconfig/lxdialog/dialog.h:31:20: fatal error: curses.h: No such file or directory   -------           sudo apt-get install libncurses5-dev libncursesw5-dev
+
+Make file system by busybox in /home:
+	1) mkdir rootfs
+	2) mkdir rootfs/lib
+	3) cp -r busybox-xxx/_install/* rootfs
+	4) cp -p /usr/arm-linux-gnueabi/bin/* rootfs/lib
+	5) mkdir -p rootfs/dev/
+	6) mknod -m 666 tty1 c 4 1
+	7) mknod -m 666 tty2 c 4 2
+	6) mknod -m 666 tty3 c 4 3
+	6) mknod -m 666 tty4 c 4 4
+	6) mknod -m 666 console c 5 1
+	6) mknod -m 666 null c 1 3
